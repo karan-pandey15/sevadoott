@@ -1,0 +1,26 @@
+{
+  "name": "Sevadoot - Home Service Booking App",
+  "short_name": "Sevadoot",
+  "description": "Trusted home service marketplace for mehndi artist booking, elder care companion service, senior citizen assistance, and hospital visit helper.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#004A8D",
+  "theme_color": "#004A8D",
+  "lang": "en-IN",
+  "orientation": "portrait-primary",
+  "categories": ["lifestyle", "utilities", "health"],
+  "icons": [
+    {
+      "src": "/image/sevadoot.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/image/sevadoot.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
