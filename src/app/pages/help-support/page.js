@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import { SEVADOOT_CONTACT } from '@/lib/partnerContact';
 import { useRouter } from 'next/navigation';
 import { 
   ArrowLeft, 
@@ -22,9 +23,9 @@ const HelpSupport = () => {
   const [activeTab, setActiveTab] = useState('faq');
   const [expandedFaq, setExpandedFaq] = useState(null);
 
-  const phoneNumber = '+919879790705';
-  const phoneDisplay = '+91 9879790705';
-  const email = 'support@sevadoot.com';
+  const phoneNumber = SEVADOOT_CONTACT.phone.tel;
+  const phoneDisplay = SEVADOOT_CONTACT.phone.numbers[0];
+  const email = SEVADOOT_CONTACT.email.address;
 
   const faqs = [
     {
@@ -227,17 +228,13 @@ const HelpSupport = () => {
                 <h3 className="text-base font-bold text-black">Support Hours</h3>
               </div>
               <div className="space-y-2">
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-500">Monday - Friday</span>
-                  <span className="font-semibold text-black">8:00 AM - 8:00 PM</span>
+                <div className="flex justify-between gap-4 text-sm">
+                  <span className="text-gray-500">{SEVADOOT_CONTACT.hours.weekdays}</span>
+                  <span className="text-right font-semibold text-black">{SEVADOOT_CONTACT.hours.time}</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-500">Saturday</span>
-                  <span className="font-semibold text-black">07:00 AM - 10:00 PM</span>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-500">Sunday</span>
-                  <span className="font-semibold text-black">07:00 AM - 10:00 PM</span>
+                  <span className="text-gray-500">Saturday – Sunday</span>
+                  <span className="font-semibold text-black">{SEVADOOT_CONTACT.hours.weekend}</span>
                 </div>
               </div>
             </div>

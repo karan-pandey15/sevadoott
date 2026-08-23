@@ -8,8 +8,8 @@ export const metadata = {
 };
 
 /** Only these categories navigate; others do nothing on click. */
-const CLICKABLE_SLIDER_IDS = ["mehndi", "Attendant"]; // Elder Care Companion
-const CLICKABLE_GRID_IDS = ["mehndi", "seniorCareCompanion"]; // Elder Care Companion
+const CLICKABLE_SLIDER_IDS = ["mehndi", "Attendant", "hospitality", "aviation"];
+const CLICKABLE_GRID_IDS = ["mehndi", "seniorCareCompanion", "hospitality", "aviation"];
 
 export default function CategoriesPage() {
   return (

@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import SimpleHeader from '@/components/SimpleHeader';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react';
+import { SEVADOOT_CONTACT } from '@/lib/partnerContact';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -34,7 +35,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <h3 className="font-bold text-gray-800">Our Office</h3>
-                <p className="text-sm text-gray-600">Surat, Gujarat</p>
+                <p className="text-sm text-gray-600">{SEVADOOT_CONTACT.office.address}</p>
               </div>
             </div>
 
@@ -43,8 +44,8 @@ export default function ContactPage() {
                 <Phone size={20} />
               </div>
               <div>
-                <h3 className="font-bold text-gray-800">Call Us</h3>
-                <p className="text-sm text-gray-600">+91 9879790705</p>
+                <h3 className="font-bold text-gray-800">WhatsApp / Phone</h3>
+                <p className="text-sm text-gray-600">{SEVADOOT_CONTACT.phone.numbers[0]}</p>
               </div>
             </div>
 
@@ -54,7 +55,17 @@ export default function ContactPage() {
               </div>
               <div>
                 <h3 className="font-bold text-gray-800">Email Us</h3>
-                <p className="text-sm text-gray-600">support@sevadoot.com</p>
+                <p className="text-sm text-gray-600">{SEVADOOT_CONTACT.email.address}</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4 p-4 rounded-2xl bg-gray-50 border border-gray-100">
+              <div className="bg-[#1898A5] p-3 rounded-xl text-white">
+                <Clock size={20} />
+              </div>
+              <div>
+                <h3 className="font-bold text-gray-800">Business Hours</h3>
+                <p className="text-sm text-gray-600">{SEVADOOT_CONTACT.hours.display}</p>
               </div>
             </div>
           </div>

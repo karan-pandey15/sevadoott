@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { MapPin, Phone, Mail, Send, Building2 } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, Building2, Clock } from 'lucide-react';
 import { SEVADOOT_CONTACT } from '@/lib/partnerContact';
 
 export default function PartnerContact() {
@@ -60,6 +60,16 @@ export default function PartnerContact() {
               <a href={`mailto:${SEVADOOT_CONTACT.email.address}`} className="text-sm text-gray-700 mt-1 hover:text-[#1898A5] transition-colors">
                 {SEVADOOT_CONTACT.email.address}
               </a>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4 p-5 bg-white rounded-xl border border-gray-200 shadow-sm">
+            <div className="w-11 h-11 rounded-xl bg-[#F58220]/20 flex items-center justify-center text-[#F58220] shrink-0">
+              <Clock size={22} />
+            </div>
+            <div>
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-wide">{SEVADOOT_CONTACT.hours.label}</p>
+              <p className="text-sm text-gray-700 mt-1">{SEVADOOT_CONTACT.hours.display}</p>
             </div>
           </div>
 

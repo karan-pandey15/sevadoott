@@ -143,7 +143,8 @@ export function buildOrganizationSchema() {
     description: DEFAULT_DESCRIPTION,
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+91-9879790705',
+      telephone: '+91-9327917771',
+      email: 'atmanexxus@gmail.com',
       contactType: 'customer support',
       areaServed: 'IN',
       availableLanguage: ['English', 'Hindi'],

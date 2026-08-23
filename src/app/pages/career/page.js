@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import SimpleHeader from '@/components/SimpleHeader';
 import { Rocket, Heart, Zap, Send, Paperclip } from 'lucide-react';
+import { SEVADOOT_CONTACT } from '@/lib/partnerContact';
 
 export default function Career() {
   const [formData, setFormData] = useState({
@@ -162,7 +163,7 @@ export default function Career() {
         <section className="pt-6 border-t border-gray-100 text-center">
           <p className="text-sm text-gray-500">
             Don't see a relevant role? Send your resume to <br />
-            <span className="font-bold text-[#1898A5]">sevadoot@support.com</span>
+            <span className="font-bold text-[#1898A5]">{SEVADOOT_CONTACT.email.address}</span>
           </p>
         </section>
       </div>

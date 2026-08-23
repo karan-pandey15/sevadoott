@@ -3,7 +3,6 @@
 import { useState, useRef } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import ExploreMoreButton from '@/components/HeaderScreen/ExploreMoreButton';
 
 // salon & servies 
 // food for pateints
@@ -33,6 +32,22 @@ const categories = [
     screen: '/pages/Mehndi',
     params: {},
     iconBg: '#FFF8E1',
+  },
+  {
+    id: 'hospitality',
+    name: 'Hospitality',
+    image: '/image/categoryimg/hospitality-hotel.png',
+    screen: '/pages/HospitalityAviation',
+    params: { categoryId: 'hospitality' },
+    iconBg: '#FFFFFF',
+  },
+  {
+    id: 'aviation',
+    name: 'Aviation Services',
+    image: '/image/categoryimg/aviation-travel.png',
+    screen: '/pages/HospitalityAviation',
+    params: { categoryId: 'aviation' },
+    iconBg: '#FFFFFF',
   },
   {
     id: 'Tiffin Service',
@@ -194,7 +209,7 @@ export default function CategorySlider({
     router.push(`${item.screen}${q}`);
   };
 
-  const trendingIds = ['mehndi', 'Attendant'];
+  const trendingIds = ['mehndi', 'Attendant', 'hospitality', 'aviation'];
   const visibleCategories = limitToTrending
     ? trendingIds
         .map((id) => categories.find((item) => item.id === id))
@@ -258,44 +273,27 @@ export default function CategorySlider({
       }
 
       .slider.limited{
-        display:flex;
-        flex-direction:row;
-        align-items:flex-end;
-        justify-content:space-between;
-        gap:8px;
+        display:block;
         width:100%;
         overflow:visible;
         cursor:default;
-        padding:10px 16px;
+        padding:10px 12px;
       }
 
       .slider.limited .trending-cats-group{
-        display:flex;
-        flex-direction:row;
-        align-items:flex-end;
-        gap:16px;
-        flex:1 1 auto;
-        min-width:0;
-      }
-
-      .slider.limited .explore-slot{
-        flex:0 0 auto;
-        display:flex;
-        align-items:flex-end;
-        justify-content:center;
-      }
-
-      @media(min-width:640px){
-        .slider.limited .trending-cats-group{
-          gap:24px;
-        }
+        display:grid;
+        grid-template-columns:repeat(4, minmax(0, 1fr));
+        column-gap:8px;
+        row-gap:0;
+        width:100%;
+        align-items:start;
       }
 
       .slider.limited .item{
-        width:72px;
-        min-width:72px;
-        max-width:72px;
-        flex:0 0 72px;
+        width:100%;
+        min-width:0;
+        max-width:none;
+        flex:none;
       }
 
       .slider.limited .icon{
@@ -321,7 +319,8 @@ export default function CategorySlider({
         font-weight:700;
         min-height:28px;
         line-height:1.25;
-        max-width:72px;
+        max-width:100%;
+        width:100%;
         text-align:center;
       }
 
@@ -374,16 +373,16 @@ export default function CategorySlider({
         font-size:12px;
         text-align:center;
         font-weight:700;
+        font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
       }
 
       @media(max-width:768px){
         .slider.limited{
           padding:10px 12px;
-          gap:6px;
         }
 
         .slider.limited .trending-cats-group{
-          gap:12px;
+          column-gap:8px;
         }
 
         .item{
@@ -432,15 +431,17 @@ export default function CategorySlider({
                         alt={item.name}
                         width={64}
                         height={64}
-                        style={{ objectFit: 'cover', padding: 0, width: '100%', height: '100%' }}
+                        style={{
+                          objectFit: ['hospitality', 'aviation'].includes(item.id) ? 'contain' : 'cover',
+                          padding: 0,
+                          width: '100%',
+                          height: '100%',
+                        }}
                       />
                     </div>
                     <span className="label">{item.name}</span>
                   </button>
                 ))}
-              </div>
-              <div className="explore-slot">
-                <ExploreMoreButton />
               </div>
             </>
           ) : (
@@ -456,12 +457,15 @@ export default function CategorySlider({
                   className={`icon ${active === item.id ? 'active' : ''}`}
                   style={{ background: item.iconBg }}
                 >
-                  <Image
+                    <Image
                     src={item.image}
                     alt={item.name}
                     width={80}
                     height={80}
-                    style={{ objectFit: 'cover', padding: 0 }}
+                    style={{
+                      objectFit: ['hospitality', 'aviation'].includes(item.id) ? 'contain' : 'cover',
+                      padding: 0,
+                    }}
                   />
                 </div>
                 <span className="label">{item.name}</span>

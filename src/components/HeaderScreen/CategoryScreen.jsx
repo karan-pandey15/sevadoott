@@ -30,6 +30,22 @@ const categories = [
     iconBg: '#FFF8E1',
   },
   {
+    id: 'hospitality',
+    name: 'Hospitality',
+    image: '/image/categoryimg/hospitality-hotel.png',
+    screen: '/pages/HospitalityAviation',
+    params: { categoryId: 'hospitality' },
+    iconBg: '#FFFFFF',
+  },
+  {
+    id: 'aviation',
+    name: 'Aviation Services',
+    image: '/image/categoryimg/aviation-travel.png',
+    screen: '/pages/HospitalityAviation',
+    params: { categoryId: 'aviation' },
+    iconBg: '#FFFFFF',
+  },
+  {
     id: 'Tiffin Service',
     name: 'Food For Patient',
     image: '/image/categoryimg/foodpatients.png',
@@ -236,7 +252,7 @@ export default function CategoryScreen({
           />
         </div>
         <span
-          className="cat-label line-clamp-2 min-h-[22px] max-w-full text-center text-[8px] font-bold leading-tight text-gray-800 sm:text-[9px] md:min-h-[28px] md:text-[10.5px] lg:text-[11px]"
+          className="cat-label font-poppins line-clamp-2 min-h-[22px] max-w-full text-center text-[8px] font-bold leading-tight text-gray-800 sm:text-[9px] md:min-h-[28px] md:text-[10.5px] lg:text-[11px]"
           itemProp="name"
         >
           {item.name}

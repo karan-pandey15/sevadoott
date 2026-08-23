@@ -3,6 +3,7 @@
 
 import React, { useState, useEffect, useCallback, useMemo, Suspense } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { SEVADOOT_CONTACT } from "@/lib/partnerContact";
 
 // ---------- STORE HELPERS (localStorage) ----------
 const STORES = {
@@ -640,10 +641,11 @@ function HRPartnerPageInner() {
                   <div>
                     <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
                     <div className="space-y-2">
-                      <p><strong>Email:</strong> support@sevadoot.com</p>
-                      <p><strong>Phone:</strong> +91 9879790705</p>
-                      <p><strong>Address:</strong> Surat, Gujarat</p>
-                      <p className="mt-4 text-sm text-gray-500">Our support team is available 24/7 to assist you.</p>
+                      <p><strong>Email:</strong> {SEVADOOT_CONTACT.email.address}</p>
+                      <p><strong>WhatsApp / Phone:</strong> {SEVADOOT_CONTACT.phone.numbers[0]}</p>
+                      <p><strong>Address:</strong> {SEVADOOT_CONTACT.office.address}</p>
+                      <p><strong>Hours:</strong> {SEVADOOT_CONTACT.hours.display}</p>
+                      <p className="mt-4 text-sm text-gray-500">Our support team is available during business hours to assist you.</p>
                     </div>
                   </div>
                 )}

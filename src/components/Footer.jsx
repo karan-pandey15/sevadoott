@@ -19,6 +19,8 @@ const serviceLinks = [
   { name: "Attendant For Parents", path: "/pages/Attendant" },
   { name: "Guardian For Kids", path: "/pages/GuardianKids" },
   { name: "Mehndi Artist", path: "/pages/Mehndi" },
+  { name: "Hospitality", path: "/pages/HospitalityAviation?categoryId=hospitality" },
+  { name: "Aviation Services", path: "/pages/HospitalityAviation?categoryId=aviation" },
   { name: "Pandit Ji Booking", path: "/pages/Pandit" },
   { name: "Pet Walker", path: "/pages/petwalker" },
   { name: "Physiotherapist", path: "/pages/physiotherapist" },
@@ -80,6 +82,7 @@ export default function Footer() {
 
   const helpline = SEVADOOT_CONTACT.phone.numbers[0];
   const email = SEVADOOT_CONTACT.email.address;
+  const telHref = SEVADOOT_CONTACT.phone.tel || helpline.replace(/\s/g, "");
 
   return (
     <footer className="relative overflow-hidden bg-gradient-to-b from-[#167F8A] to-[#0E5A63] text-white">
@@ -162,7 +165,7 @@ export default function Footer() {
                 </div>
               </div>
               <a
-                href={`tel:${helpline.replace(/\s/g, "")}`}
+                href={`tel:${telHref}`}
                 className="flex items-start gap-3 rounded-2xl bg-white/8 p-3 ring-1 ring-white/10 transition hover:bg-white/12"
               >
                 <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-[#F58220]/20 text-[#FDE68A]">

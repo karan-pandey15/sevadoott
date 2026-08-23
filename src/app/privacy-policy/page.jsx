@@ -2,6 +2,7 @@
 
 import SimpleHeader from '@/components/SimpleHeader';
 import { Lock, Eye, FileText, Bell } from 'lucide-react';
+import { SEVADOOT_CONTACT } from '@/lib/partnerContact';
 
 export default function PrivacyPolicyPage() {
   return (
@@ -64,9 +65,10 @@ export default function PrivacyPolicyPage() {
             If you have any questions about our Privacy Policy, please contact us:
           </p>
           <div className="space-y-2 text-sm text-gray-300">
-            <p><strong>OFFICE:</strong> Surat, Gujarat</p>
-            <p><strong>HELPLINE:</strong> +91 9879790705</p>
-            <p><strong>EMAIL:</strong> sevadoot@support.com</p>
+            <p><strong>OFFICE:</strong> {SEVADOOT_CONTACT.office.address}</p>
+            <p><strong>WHATSAPP / PHONE:</strong> {SEVADOOT_CONTACT.phone.numbers[0]}</p>
+            <p><strong>EMAIL:</strong> {SEVADOOT_CONTACT.email.address}</p>
+            <p><strong>HOURS:</strong> {SEVADOOT_CONTACT.hours.display}</p>
           </div>
         </section>
 

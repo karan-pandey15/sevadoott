@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import SimpleHeader from '@/components/SimpleHeader';
 import { Building2, Handshake, Users, Send } from 'lucide-react';
+import { SEVADOOT_CONTACT } from '@/lib/partnerContact';
 
 export default function Collaboration() {
   const [formData, setFormData] = useState({
@@ -159,10 +160,10 @@ export default function Collaboration() {
           <h3 className="font-bold text-gray-800 mb-4">Direct Contact</h3>
           <div className="space-y-3">
             <p className="text-sm text-gray-600 flex items-center gap-2">
-              <span className="font-semibold text-[#1898A5]">Email:</span> sevadoot@support.com
+              <span className="font-semibold text-[#1898A5]">Email:</span> {SEVADOOT_CONTACT.email.address}
             </p>
             <p className="text-sm text-gray-600 flex items-center gap-2">
-              <span className="font-semibold text-[#1898A5]">Call:</span> +91 9879790705
+              <span className="font-semibold text-[#1898A5]">WhatsApp / Phone:</span> {SEVADOOT_CONTACT.phone.numbers[0]}
             </p>
           </div>
         </section>

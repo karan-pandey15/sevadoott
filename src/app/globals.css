@@ -13,6 +13,12 @@
 body {
    font-family: 'Marcellus', 'Work Sans', serif;
 }
+
+.font-poppins,
+.cat-label,
+.group-heading {
+  font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+}
 :root {
   --brand-primary: #1898A5;
   --brand-primary-dark: #147F8A;

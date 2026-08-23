@@ -25,7 +25,7 @@ import {
 
 export default function HomePageClient() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="font-poppins min-h-screen bg-white">
       <section className="w-full md:hidden" aria-label="Service categories carousel">
         <CategorySlider limitToTrending />
       </section>
