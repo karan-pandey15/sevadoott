@@ -214,111 +214,34 @@ export default function CategoryScreen({
 
   const renderCategoryCard = (item, isTrending = false) => {
     const clickable = isClickable(item.id);
-    const className = `cat-card ${isTrending ? 'trending-cat-card' : ''} ${activeCategory === item.id ? 'active' : ''} ${clickable ? '' : 'cat-card--disabled'}`;
+    const className = `cat-card flex w-full flex-col items-center gap-1.5 rounded-[14px] bg-transparent p-1.5 no-underline transition-transform md:gap-2 md:p-2 ${
+      isTrending ? 'trending-cat-card' : ''
+    } ${activeCategory === item.id ? 'active' : ''} ${
+      clickable ? 'cursor-pointer hover:-translate-y-0.5' : 'cat-card--disabled cursor-default'
+    }`;
 
     const inner = (
       <>
         <div
-          className="circle-wrap"
-          style={{ backgroundColor: item.iconBg }}
+          className={`circle-wrap mx-auto flex aspect-square h-[62px] w-[62px] shrink-0 items-center justify-center overflow-hidden rounded-full bg-white shadow-[0_4px_12px_rgba(24,152,165,0.12)] transition-transform sm:h-[72px] sm:w-[72px] md:h-[86px] md:w-[86px] lg:h-[96px] lg:w-[96px] ${
+            clickable ? 'hover:scale-105 hover:shadow-[0_8px_18px_rgba(24,152,165,0.22)]' : ''
+          }`}
         >
           <Image
             src={item.image}
             alt={item.name}
-            width={isTrending ? 64 : 64}
-            height={isTrending ? 64 : 64}
-            className="cat-img"
+            width={96}
+            height={96}
+            className="h-full w-full object-contain object-center p-1"
           />
         </div>
-        <span className="cat-label" itemProp="name">{item.name}</span>
+        <span
+          className="cat-label line-clamp-2 min-h-[22px] max-w-full text-center text-[8px] font-bold leading-tight text-gray-800 sm:text-[9px] md:min-h-[28px] md:text-[10.5px] lg:text-[11px]"
+          itemProp="name"
+        >
+          {item.name}
+        </span>
       </>
-    );
-
-    const cardStyles = (
-      <style jsx>{`
-        .cat-card {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 6px;
-          background: transparent;
-          border: none;
-          cursor: pointer;
-          padding: 6px 2px;
-          border-radius: 14px;
-          transition: transform 0.2s ease, background 0.2s ease;
-          width: 100%;
-          text-decoration: none;
-        }
-
-        .cat-card--disabled {
-          cursor: default;
-          pointer-events: auto;
-        }
-
-        .cat-card:not(.cat-card--disabled):hover,
-        .cat-card.active {
-          transform: translateY(-2px);
-          background: #f4fbfc;
-        }
-
-        .circle-wrap {
-          width: 62px;
-          height: 62px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-          flex-shrink: 0;
-          box-shadow: 0 4px 12px rgba(24, 152, 165, 0.12);
-          transition: transform 0.18s ease, box-shadow 0.18s ease;
-        }
-
-        .cat-card:not(.cat-card--disabled):hover .circle-wrap {
-          transform: scale(1.05);
-          box-shadow: 0 8px 18px rgba(24, 152, 165, 0.22);
-        }
-
-        .cat-img {
-          width: 52px;
-          height: 52px;
-          object-fit: cover;
-        }
-
-        .cat-label {
-          font-size: 10px;
-          font-weight: 700;
-          color: #1f2937;
-          text-align: center;
-          line-height: 1.25;
-          max-width: 100%;
-          min-height: 26px;
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-
-        @media (min-width: 480px) {
-          .circle-wrap { width: 72px; height: 72px; }
-          .cat-img { width: 58px; height: 58px; }
-          .cat-label { font-size: 11px; }
-        }
-
-        @media (min-width: 768px) {
-          .circle-wrap { width: 86px; height: 86px; }
-          .cat-img { width: 68px; height: 68px; }
-          .cat-label { font-size: 12.5px; min-height: 32px; }
-          .cat-card { gap: 8px; padding: 8px 4px; }
-        }
-
-        @media (min-width: 1024px) {
-          .circle-wrap { width: 96px; height: 96px; }
-          .cat-img { width: 76px; height: 76px; }
-          .cat-label { font-size: 13px; }
-        }
-      `}</style>
     );
 
     if (!clickable) {
@@ -331,7 +254,6 @@ export default function CategoryScreen({
           onClick={(e) => e.preventDefault()}
         >
           {inner}
-          {cardStyles}
         </div>
       );
     }
@@ -346,7 +268,6 @@ export default function CategoryScreen({
         itemProp="url"
       >
         {inner}
-        {cardStyles}
       </Link>
     );
   };
