@@ -111,7 +111,7 @@ export default function DealOfTheDayPage() {
     return (
       <div style={{ display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', minHeight:'100vh', background:`linear-gradient(160deg,${PRIMARY} 0%,${PRIMARY_DARK} 100%)` }}>
         <div style={{ width:52, height:52, border:'4px solid rgba(255,255,255,0.2)', borderTop:'4px solid #fff', borderRadius:'50%', animation:'spin .8s linear infinite' }} />
-        <p style={{ color:'rgba(255,255,255,.7)', marginTop:16, fontFamily:'Nunito,sans-serif', fontWeight:600 }}>Loading deals…</p>
+        <p style={{ color:'rgba(255,255,255,.7)', marginTop:16, fontWeight:600 }}>Loading deals…</p>
         <style>{`@keyframes spin{to{transform:rotate(360deg)}}`}</style>
       </div>
     );
@@ -121,7 +121,7 @@ export default function DealOfTheDayPage() {
      PAGE
   ═══════════════════════════════════════ */
   return (
-    <div style={{ fontFamily:"'Nunito','Segoe UI',sans-serif", background:'#EEF3FB', minHeight:'100vh', paddingBottom: cartCount > 0 ? 110 : 36 }}>
+    <div style={{ background:'#EEF3FB', minHeight:'100vh', paddingBottom: cartCount > 0 ? 110 : 36 }}>
 
       {/* ══════════════ HEADER ══════════════ */}
       <header style={{ background:`linear-gradient(135deg,${PRIMARY} 0%,${PRIMARY_DARK} 100%)`, position:'sticky', top:0, zIndex:50, boxShadow:`0 4px 24px rgba(24,152,165,0.45)` }}>
@@ -390,7 +390,6 @@ export default function DealOfTheDayPage() {
       )}
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap');
         * { box-sizing: border-box; }
         ::-webkit-scrollbar { display: none; }
         body { margin: 0; }

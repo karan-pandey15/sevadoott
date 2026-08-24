@@ -42,7 +42,7 @@ function HotelDetail({ hotel, onBack }) {
   const showToast = (msg) => { setToast(msg); setTimeout(() => setToast(null), 2500); };
 
   return (
-      <div className="hotel-detail-container" style={{ display: "flex", flexDirection: "column", height: "100dvh", backgroundColor: "#f1f5f9", fontFamily: "'Segoe UI', system-ui, sans-serif", overflow: "hidden" }}>
+      <div className="hotel-detail-container" style={{ display: "flex", flexDirection: "column", height: "100dvh", backgroundColor: "#f1f5f9", overflow: "hidden" }}>
       {toast && (
         <div style={{ position: "fixed", top: 16, left: "50%", transform: "translateX(-50%)", backgroundColor: "#10b981", color: "#fff", padding: "10px 20px", borderRadius: 10, fontSize: 13, fontWeight: 600, zIndex: 9999, boxShadow: "0 4px 16px rgba(0,0,0,0.15)", animation: "fadeDown 0.25s ease" }}>
           {toast}
@@ -239,7 +239,7 @@ export default function HotelScreen() {
   );
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100dvh", backgroundColor: "#f1f5f9", fontFamily: "'Segoe UI', system-ui, sans-serif", overflow: "hidden" }}>
+    <div style={{ display: "flex", flexDirection: "column", height: "100dvh", backgroundColor: "#f1f5f9", overflow: "hidden" }}>
       {toast && (
         <div style={{ position: "fixed", top: 16, left: "50%", transform: "translateX(-50%)", backgroundColor: toast.type === "error" ? "#ef4444" : "#10b981", color: "#fff", padding: "10px 20px", borderRadius: 10, fontSize: 13, fontWeight: 600, zIndex: 9999, boxShadow: "0 4px 16px rgba(0,0,0,0.15)", maxWidth: "88vw", textAlign: "center", animation: "fadeDown 0.25s ease" }}>
           {toast.msg}

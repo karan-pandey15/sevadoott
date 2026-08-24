@@ -668,7 +668,7 @@ export default function MehndiArtist() {
   }
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100dvh", backgroundColor: "#fff", fontFamily: "'Segoe UI', system-ui, sans-serif", overflow: "hidden" }}>
+    <div style={{ display: "flex", flexDirection: "column", height: "100dvh", backgroundColor: "#fff", overflow: "hidden" }}>
 
       {toast && (
         <div style={{

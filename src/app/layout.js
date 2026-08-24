@@ -94,7 +94,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href={SITE_URL} />
       </head>
       <body
-        className={`${inter.variable} ${poppins.variable} font-sans antialiased min-h-screen flex flex-col bg-[#F8F9FA]`}
+        className={`${poppins.className} ${poppins.variable} ${inter.variable} font-sans antialiased min-h-screen flex flex-col bg-[#F8F9FA]`}
       >
         <GlobalStructuredData />
         <ReduxProvider>

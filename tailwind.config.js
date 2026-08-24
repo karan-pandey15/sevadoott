@@ -21,7 +21,9 @@ module.exports = {
         "dark-teal": "#0d5560",
       },
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
+        sans: ["var(--font-poppins)", "ui-sans-serif", "system-ui", "sans-serif"],
+        poppins: ["var(--font-poppins)", "ui-sans-serif", "system-ui", "sans-serif"],
+        inter: ["var(--font-inter)", "sans-serif"],
       },
       maxWidth: {
         "content": "1280px",
